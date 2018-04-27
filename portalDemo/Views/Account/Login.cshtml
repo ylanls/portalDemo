@@ -1,0 +1,34 @@
+﻿@using portalDemo.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "注册";
+}
+@Styles.Render("~/Content/account/signup.css")
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/account/signuppage.js")
+}
+<script>
+    $(function () {
+        var signuppage = new SignUpPage();
+        signuppage.init();
+    })
+</script>
+<div class="signup-body-div">
+    <form>
+        @Html.AntiForgeryToken()
+        <div class="signup-input-container">
+            <span class="title">登陆</span>
+            <div class="signup-input-div">
+                <input type="text" name="Email" placeholder="邮箱" />
+                <span id="emailError" class="error-span"></span>
+            </div>
+            <div class="signup-input-div">
+                <input type="password" name="Password" placeholder="密码" />
+                <span id="passwordError" class="error-span"></span>
+            </div>           
+            <div class="login-button">登陆</div>
+            <span class="link"><a href="/account/register">还没有账号，点击注册</a></span>
+        </div>
+    </form>
+</div>

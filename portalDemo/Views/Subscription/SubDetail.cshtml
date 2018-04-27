@@ -1,0 +1,65 @@
+﻿@model List<SubModel>
+@using portalDemo.Models;
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        border-top: 2px solid #4eb6fb;
+        border-left: 1px solid #dfdfdf;
+        border-right: 1px solid #dfdfdf;
+        border-bottom: 1px solid #dfdfdf;
+        margin-top: 20px;
+    }
+
+    .table-head th {
+        padding: 8px 0;
+        color: #999;
+        background-color: #f3f3f3;
+        border-bottom: 1px solid #dfdfdf;
+    }
+
+    .first-th {
+        padding-left: 20px !important;
+    }
+
+    .ticket-title-wrapper {
+        padding: 10px 20px;
+    }
+
+    .ticket-first td {
+        border-top: 1px solid #dfdfdf;
+    }
+
+    .title {
+        font-size: 30px;
+        font-weight: 600;
+        margin-top: 50px;
+    }
+</style>
+<div>
+    <div class="title">
+        预定记录
+    </div>
+    <table>
+        <tr class="table-head">
+            <th class="first-th">名称</th>
+            <th>价格</th>
+            <th>日期</th>
+            <th>数量</th>
+            <th>总计</th>
+        </tr>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr class="ticket-first">
+                    <td class="ticket-title-wrapper">@item.Name</td>
+                    <td>@item.Price</td>
+                    <td>@item.Date</td>
+                    <td>@item.Count</td>
+                    <td>@item.Total</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

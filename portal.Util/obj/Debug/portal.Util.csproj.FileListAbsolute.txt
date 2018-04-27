@@ -1,0 +1,10 @@
+E:\portal\portalDemo\portal.Util\bin\Debug\portal.Util.dll
+E:\portal\portalDemo\portal.Util\bin\Debug\portal.Util.pdb
+E:\portal\portalDemo\portal.Util\obj\Debug\portal.Util.csprojResolveAssemblyReference.cache
+E:\portal\portalDemo\portal.Util\obj\Debug\portal.Util.dll
+E:\portal\portalDemo\portal.Util\obj\Debug\portal.Util.pdb
+G:\portalDemo\portal.Util\bin\Debug\portal.Util.dll
+G:\portalDemo\portal.Util\bin\Debug\portal.Util.pdb
+G:\portalDemo\portal.Util\obj\Debug\portal.Util.csproj.CoreCompileInputs.cache
+G:\portalDemo\portal.Util\obj\Debug\portal.Util.dll
+G:\portalDemo\portal.Util\obj\Debug\portal.Util.pdb

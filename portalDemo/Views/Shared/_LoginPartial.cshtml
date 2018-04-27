@@ -1,0 +1,24 @@
+﻿@using Microsoft.AspNet.Identity
+@using portal.Domain.Model
+@if (Request.Cookies["_formAuthInfo_"] != null)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                @{ UserInfoModel cookieValue = System.Web.Helpers.Json.Decode(Request.Cookies["_formAuthInfo_"].Value, typeof(UserInfoModel));}
+                @Html.ActionLink("Hello " + cookieValue.Name + " !", "Subdetail", "Subscription", routeValues: null, htmlAttributes: new { title = "Manage" })
+            </li>
+            <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
+        </ul>
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("注册", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("登陆", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}

@@ -1,0 +1,66 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<style>
+    .body-img {
+        position: absolute;
+        width: 100%;
+        top: 30px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .title {
+        left: 300px;
+        position: absolute;
+        font-size: 40px;
+        font-family: cursive;
+        font-weight: 600;
+    }
+
+    .menu {
+        right: 300px;
+        position: absolute;
+        width: 200px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        font-size: 20px;
+    }
+
+        .menu a {
+            color: black;
+            text-decoration: none;
+        }
+
+            .menu a:hover {
+                color: #fff;
+            }
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>天门山国家森林公园</title>
+</head>
+<body>
+    <div class="body-img">
+        <div>
+            <div class="title">天门山国家森林公园</div>
+            <div class="menu">
+                <a href="/home/index">详情</a>
+                <a href="/account/register">注册</a>
+                <a href="/account/login">登陆</a>
+            </div>
+        </div>
+    </div>
+    <img src="~/Content/themes/images/home.jpg" />
+</body>
+</html>

@@ -1,0 +1,9 @@
+G:\portalDemo\portal.Domain\bin\Debug\portal.Domain.dll
+G:\portalDemo\portal.Domain\bin\Debug\portal.Domain.pdb
+G:\portalDemo\portal.Domain\bin\Debug\portal.Util.dll
+G:\portalDemo\portal.Domain\bin\Debug\portal.Util.pdb
+G:\portalDemo\portal.Domain\obj\Debug\portal.Domain.csprojResolveAssemblyReference.cache
+G:\portalDemo\portal.Domain\obj\Debug\portal.Domain.csproj.CoreCompileInputs.cache
+G:\portalDemo\portal.Domain\obj\Debug\portal.Domain.csproj.CopyComplete
+G:\portalDemo\portal.Domain\obj\Debug\portal.Domain.dll
+G:\portalDemo\portal.Domain\obj\Debug\portal.Domain.pdb

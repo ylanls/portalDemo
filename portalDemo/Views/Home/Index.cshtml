@@ -1,0 +1,136 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@Scripts.Render("~/scripts/home/homepage.js")
+@Styles.Render("~/Content/home/index.css")
+<script type="text/javascript" src="https://webapi.amap.com/maps?v=1.4.4&key=315136d91fe1c3ae13eb9055fcabf39a"></script>
+<script>
+    $(function () {
+        var homePage = new HomePage();
+        homePage.init();
+    })
+
+</script>
+<div class="home-container">
+    <div class="home-body">
+        <div class="home-body-one">
+            <img src="~/Content/themes/images/1_C_500_280.jpg" alt="Alternate Text" id="home-img" />
+            <div class="home-content">
+                <div class="home-view-title">天门山国家森林公园</div>
+                <div>
+                    <label>景点地址</label>
+                    <span>辽宁省大连市庄河市仙人洞镇天门山村</span>
+                    <a href="javascript:void(0)" id="show-map">查看地图</a>
+                </div>
+                <div>
+                    <label>开放时间</label>
+                    <span>8:30-16:00</span>
+                </div>
+                <div>
+                    <label>服务承诺</label>
+                    <span title="预订此景区门票，入园无票且10分钟内未解决，可买原价票入园，我们双倍赔差价。" class="permission">入园保证</span>
+                </div>
+            </div>
+        </div>
+        <div id="ticket-div">
+            <table class="ticket-table">
+                <thead>
+                    <tr>
+                        <th class="thead-first-th">名称</th>
+                        <th>提前预定时间</th>
+                        <th>价格</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="ticket-first">
+                        <td class="ticket-title-wrapper">[单票] 天门山国家森林公园登山门票+往返观光车成人票</td>
+                        <td>当天15:30前</td>
+                        <td>￥80</td>
+                        <td><a data-tickettype="1" class="but">预定</a></td>
+                    </tr>
+                    <tr class="ticket-second">
+                        <td class="ticket-title-wrapper">[单票] 天门山国家森林公园登山成人票</td>
+                        <td>当天15:30前</td>
+                        <td>￥50</td>
+                        <td><a data-tickettype="0" class="but">预定</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <div class="menu-container">
+                <span  data-id="view-des" class="menu-selected">简介</span>
+                <span  data-id="need-know" >预定须知</span>
+                <span id="show-map-but" data-id="map-view">地图</span>
+            </div>
+
+            <div id="need-know" class="menu-body-div display-none">
+                <label>优惠政策</label>
+                <p>
+                    免费人群：1.3米（不含）以下儿童免票；70周岁（含）以上老人持老年证。
+                    以上信息仅供参考，具体请以景区当天披露为准。
+                </p>
+                <br />
+                <label>预定限制</label>
+                <p>
+                    本产品仅限成人预订，儿童票请至景区售票处购买。
+                </p>
+                <br />
+                <label>温馨提示</label>
+                <p>
+                    <ul>
+                        <li>漂流安全须知</li>
+                        <li>
+                            一、身高在1.2米以下者、65岁以上老人、孕妇、醉酒者、残疾人以及患有心脏病、高血压、精神病、癫痫病、痴呆等疾病患者不宜漂流。
+                        </li>
+                        <li>二、按要求穿好救生衣，途中不要脱下救生衣，并听从河道内安全员指挥。</li>
+                        <li>三、漂流时要坐在船内，不要随意下船、换船、拼船，急流处不要坐在气囊和船舷上。</li>
+                        <li>四、如途中不慎落水，请不要惊慌，因为您穿着救生衣，只要您站起身来就可以，这里的平均水深才0.8米。</li>
+                        <li>五、漂流时不要携带锐器、玻璃制品、铁制水枪、水盆等妨碍安全的物品。</li>
+                        <li>六、不要将摄像机、照相机、手机等贵重物品带上船，以免浸水，造成损失。</li>
+                        <li>七、如在漂流途中意外受伤，门票中含有保险，如遇承保游客出险，景区将及时按照承保的保险合同条款，配合保险公司工作人员办理相关手续以及理赔服务。</li>
+                    </ul>
+                </p>
+                <br />
+                <label>安全指南</label>
+                <p>
+                    旅游安全是旅游的生命线，为保障游客“住得安心、吃得放心、玩的舒心”，携程从出行常识、旅游活动和特殊人群三方面为您提供旅游安全指南。出行前，提醒您仔细阅读相关内容，重视旅游安全，使您的出游真正成为“快乐之游、难忘之游、收获之游”。
+                </p>
+            </div>
+            <div id="view-des" class="menu-body-div ">
+                <p>
+                    大连天门山国家森林公园，集旅游观光、文化体验、休闲度假、养老于一体的全年侯经营的综合性森林风景旅游度假胜地。
+                    将优美梦幻的自然风光、独具特色的美式森林小镇文化与绿色生态农业相结合，不仅能触摸到异国风情的痕迹，也能体味到老大连原汁原味的生活方式。
+                </p>
+                <div class="img-div">
+                    <img src="~/Content/themes/images/7_C_422_236.jpg" />
+                    <img src="~/Content/themes/images/8_C_422_236.jpg" />
+                </div>
+                <br />
+                <p>
+                    天门山国家森林公园位于大连庄河市北60公里处，距大连180公里，与盖县、营口、岫岩交界，又称“三家界”。由蕴奇山、转湘湖、旷峪、天门山、大河沿五个景区组成，全区150余平方公里。共分为五大景区：天门山、蕴奇山、转湘湖、旷峪、大河沿。
+                    六大规划区域：漂流体验区、老年康城及书画教育基地区、游客接待中心及生态农业基地区、宗教文化区、森林温泉酒店区、高山滑雪区。
+                </p>
+                <div class="img-div">
+                    <img src="~/Content/themes/images/9_C_422_236.jpg" />
+                    <img src="~/Content/themes/images/10_C_422_236.jpg" />
+                </div>
+                <br />
+                <p>
+                    这里不但风景秀丽，而且拥有三十六座危峰，超过900米的就有三座，自然风景秀丽。而作为辽宁画家写生基地、融自然风光与人文景观于一体的天门山，
+                    将让您敞开心扉，走进天门山度假区，你将吸允天地之气，与久违的大自然拥抱，享受大自然带给你身心的愉悦和体验人生从未有过的快乐之旅。
+                </p>
+                <div class="img-div">
+                    <img src="~/Content/themes/images/11_C_422_236.jpg" />
+                    <img src="~/Content/themes/images/12_C_422_236.jpg" />
+                </div>
+            </div>
+            <div id="map-view" class="menu-body-div display-none">
+                <div id="map-div">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

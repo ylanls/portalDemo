@@ -1,0 +1,125 @@
+﻿@model SubModel
+@using portalDemo.Models;
+<style>
+    .body {
+        width: 500px;
+        margin: 30px auto
+    }
+
+    #ticket-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 300px;
+        width: 100%;
+    }
+
+    label {
+        width: 150px;
+        font-size: 20px;
+    }
+
+    .button {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 1px solid #666;
+        border-radius: 10px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .button-div {
+        margin-top: 50px;
+    }
+
+    .confirm-button {
+        float: right;
+        display: inline-block;
+        width: 100px;
+        height: 30px;
+        text-align: center;
+        border: 1px solid #ff8400;
+        line-height: 30px;
+        border-radius: 4px;
+        color: #fff;
+        background-color: #ff8400;
+        cursor: pointer;
+    }
+
+        .confirm-button:hover {
+            background-color: #f60;
+        }
+</style>
+<script>
+    $(function () {
+        $('.button').bind('click', function () {
+            let price = parseInt($('input[name=Price]').val())
+            let count = parseInt($('input[name=Count]').val());
+            if ($(this).hasClass('disabled')) {
+                return false;
+            }
+            if ($(this).hasClass('button-left')) {
+                if (count > 1) {
+                    count--;
+                    $('input[name=Count]').val(count)
+                    if (count === 1) {
+                        $(this).addClass('disabled');
+                    }
+                }
+            }
+            if ($(this).hasClass('button-right')) {
+                count++;
+                $('input[name=Count]').val(count)
+                $('.button-left').removeClass('disabled');
+            }
+            $('input[name=Total]').val(price * count)
+        });
+        $('.confirm-button').bind('click', function () {
+            $.ajax({
+                url: '/subscription/SubscriptionTicket',
+                data: $('#ticket-form').serialize(),
+                type: 'get',
+                success: function (result) {
+                    window.location.href = '/subscription/subDetail';
+                }
+            })
+        })
+    })
+</script>
+<div class="body">
+    <form id="ticket-form">
+        <input name="Type" value="@((int)Model.Type)" hidden />
+        <input name="Price" value="@Model.Price" hidden />
+        <input name="UserId" value="@Model.UserId" hidden />
+        <input name="Name" value="@Model.Name" hidden />
+        <div>
+            <label>名称：</label>
+            <span>@Model.Name</span>
+        </div>
+        <div>
+            <label>日期：</label>
+            <input type="date" name="Date" />
+        </div>
+        <div>
+            <label>数量：</label>
+            <span>
+                <span class="button button-left">-</span>
+                <input name="Count" value="@Model.Count" readonly />
+                <span class="button button-right">+</span>
+            </span>
+        </div>
+        <div>
+            <label>价格：</label>
+            <span>@Model.Price</span>
+        </div>
+        <div>
+            <label>总计：</label>
+            <input name="Total" value="@Model.Total" readonly />
+        </div>
+    </form>
+    <div class="button-div">
+        <span class="confirm-button">确定</span>
+    </div>
+</div>
+
